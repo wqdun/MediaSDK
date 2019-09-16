@@ -7,3 +7,8 @@ tests/test_results.json
 .vs
 samples/_build
 *.user
+*.sln
+*.vcxproj
+.vscode
+*.cproject
+*.project

@@ -136,6 +136,7 @@ class CVAAPIDeviceWayland : public CHWDevice
 {
 public:
     CVAAPIDeviceWayland(){
+        std::cout << __FUNCTION__ << " start.\n";
         m_nRenderWinX = 0;
         m_nRenderWinY = 0;
         m_nRenderWinW = 0;

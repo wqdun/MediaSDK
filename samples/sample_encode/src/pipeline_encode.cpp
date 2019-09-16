@@ -16,7 +16,7 @@ This sample was distributed or derived from the Intel's Media Samples package.
 The original version of this sample may be obtained from https://software.intel.com/en-us/intel-media-server-studio
 or https://software.intel.com/en-us/media-client-solutions-support.
 \**********************************************************************************/
-
+// #undef LIBVA_SUPPORT
 #include "mfx_samples_config.h"
 
 #include "pipeline_encode.h"
@@ -841,6 +841,7 @@ mfxStatus CEncodingPipeline::InitMfxVppParams(sInputParams *pInParams)
 
 mfxStatus CEncodingPipeline::CreateHWDevice()
 {
+    std::cout << __FUNCTION__ << " start.\n";
     mfxStatus sts = MFX_ERR_NONE;
 #if D3D_SURFACES_SUPPORT
 #if MFX_D3D11_SUPPORT
@@ -1109,10 +1110,12 @@ mfxStatus CEncodingPipeline::CreateAllocator()
     }
     else
     {
+//        std::cout << "LIBVA_SUPPORT: " << LIBVA_SUPPORT << "\n";
 #ifdef LIBVA_SUPPORT
         //in case of system memory allocator we also have to pass MFX_HANDLE_VA_DISPLAY to HW library
         mfxIMPL impl;
         m_mfxSession.QueryIMPL(&impl);
+        std::cout << "impl: " << impl << "\n";
 
         if(MFX_IMPL_HARDWARE == MFX_IMPL_BASETYPE(impl))
         {
@@ -1352,6 +1355,7 @@ mfxStatus CEncodingPipeline::InitFileWriters(sInputParams *pParams)
 
 mfxStatus CEncodingPipeline::Init(sInputParams *pParams)
 {
+    std::cout << __FUNCTION__ << " start.\n";
     MSDK_CHECK_POINTER(pParams, MFX_ERR_NULL_PTR);
 
     mfxStatus sts = MFX_ERR_NONE;

@@ -479,7 +479,7 @@ mfxStatus CRegionEncodingPipeline::ResetMFXComponents(sInputParams* pParams)
 
     // free allocated frames
     DeleteFrames();
-
+    std::cout << "m_resources.GetSize(): " << m_resources.GetSize() << "\n";
     for(int i = 0; i < m_resources.GetSize(); i++)
     {
         m_resources[i].TaskPool.Close();
@@ -492,7 +492,9 @@ mfxStatus CRegionEncodingPipeline::ResetMFXComponents(sInputParams* pParams)
         if (m_resources.GetSize() > 1)
             m_HEVCRegion.RegionId = regId;
 
+        std::cout << "m_mfxEncParams.AsyncDepth: " << m_mfxEncParams.AsyncDepth << "\n";
         sts = m_resources[regId].pEncoder->Init(&m_mfxEncParams);
+        std::cout << "m_mfxEncParams.AsyncDepth: " << m_mfxEncParams.AsyncDepth << "\n";
         if (MFX_WRN_PARTIAL_ACCELERATION == sts)
         {
             msdk_printf(MSDK_STRING("WARNING: partial acceleration\n"));

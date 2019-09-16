@@ -420,6 +420,7 @@ CVAAPIDeviceDRM::CVAAPIDeviceDRM(int type)
     : m_DRMLibVA(type)
     , m_rndr(NULL)
 {
+    std::cout << __FUNCTION__ << " start.\n";
 }
 
 CVAAPIDeviceDRM::~CVAAPIDeviceDRM(void)
@@ -471,8 +472,9 @@ CHWDevice* CreateVAAPIDevice(int type)
         {
             device = new CVAAPIDeviceDRM(type);
         }
-        catch (std::exception&)
+        catch (std::exception& ex)
         {
+            std::cerr << "exception..\n";
             device = NULL;
         }
 #endif

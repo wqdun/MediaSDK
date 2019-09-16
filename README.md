@@ -1,12 +1,12 @@
 # Intel® Media SDK
 Intel® Media SDK provides a plain C API to access hardware-accelerated video decode, encode and filtering on Intel® Gen graphics hardware platforms. Implementation written in C++ 11 with parts in C-for-Media (CM).
 
-**Supported video encoders**: HEVC, AVC, MPEG-2, JPEG, VP9  
-**Supported video decoders**: HEVC, AVC, VP8, VP9, MPEG-2, VC1, JPEG  
+**Supported video encoders**: HEVC, AVC, MPEG-2, JPEG, VP9
+**Supported video decoders**: HEVC, AVC, VP8, VP9, MPEG-2, VC1, JPEG
 **Supported video pre-processing filters**: Color Conversion, Deinterlace, Denoise, Resize, Rotate, Composition
 
 # Dependencies
-Intel Media SDK depends on [LibVA](https://github.com/01org/libva/). 
+Intel Media SDK depends on [LibVA](https://github.com/01org/libva/).
 This version of Intel Media SDK is compatible with the open source [Intel Media Driver for VAAPI](https://github.com/intel/media-driver).
 
 # FAQ
@@ -37,7 +37,7 @@ To get copy of Media SDK documentation use Git* with [LFS](https://git-lfs.githu
 
 Please find full documentation under the `doc/` folder. Key documents:
 * [Media SDK Developer Reference](./doc/mediasdk-man.md)
-* [Media SDK Developer Reference Extensions for User-Defined Functions](./doc/mediasdkusr-man.pdf)
+* [Media SDK Developer Reference Extensions for User-Defined Functions](./doc/mediasdkusr-man.md)
 * [Media Samples Guide](./doc/samples/Media_Samples_Guide_Linux.md)
 
 Visit our [Github Wiki](https://github.com/Intel-Media-SDK/MediaSDK/wiki) for the detailed setting and building instructions, runtime tips and other information.
