@@ -31,17 +31,23 @@ if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE release)
 endif()
 
-set( BUILDER_ROOT "${CMAKE_HOME_DIRECTORY}/builder" )
+# User Define:
+set( MEDIA_SDK_DIRECTORY "${CMAKE_HOME_DIRECTORY}/MediaSDK/")
+# set( BUILDER_ROOT "${CMAKE_HOME_DIRECTORY}/builder" )
+set( BUILDER_ROOT "${MEDIA_SDK_DIRECTORY}/builder/" )
+set( MFX_INCLUDE "${MEDIA_SDK_DIRECTORY}/api/include/" )
 
-if( NOT DEFINED CMAKE_MFX_HOME )
-  set( CMAKE_MFX_HOME "${CMAKE_HOME_DIRECTORY}/api" )
-endif()
+# if( NOT DEFINED CMAKE_MFX_HOME )
+#   set( CMAKE_MFX_HOME "${CMAKE_HOME_DIRECTORY}/api" )
+# endif()
+set( CMAKE_MFX_HOME "${MEDIA_SDK_DIRECTORY}/api" )
 
-if(NOT DEFINED $ENV{MFX_HOME} )
-  set( MFX_HOME ${CMAKE_HOME_DIRECTORY} )
-else()
-  set( MFX_HOME $ENV{MFX_HOME} )
-endif()
+# if(NOT DEFINED $ENV{MFX_HOME} )
+#   set( MFX_HOME ${CMAKE_HOME_DIRECTORY} )
+# else()
+#   set( MFX_HOME $ENV{MFX_HOME} )
+# endif()
+set( MFX_HOME ${MEDIA_SDK_DIRECTORY} )
 
 option( ENABLE_OPENCL "Build targets dependent on OpenCL?" ON )
 
@@ -99,7 +105,7 @@ if (BUILD_TESTS)
     # which might be ON.
     set(INSTALL_GTEST OFF CACHE BOOL "Do _not_ install gtest" FORCE)
 
-    add_subdirectory(${CMAKE_HOME_DIRECTORY}/contrib/googletest)
+    add_subdirectory(${MEDIA_SDK_DIRECTORY}/contrib/googletest)
 
     # For some Linux distro versions there is an unused-result warning
     # generated inside the Gtest code at a call to fwrite. Since Gtest sets -Werror
@@ -120,18 +126,18 @@ if (BUILD_DISPATCHER)
 endif()
 
 if (BUILD_TOOLS)
-  add_subdirectory(${CMAKE_HOME_DIRECTORY}/tools)
+  add_subdirectory(${MEDIA_SDK_DIRECTORY}/tools)
 endif()
 
 if (BUILD_SAMPLES)
-  add_subdirectory(${CMAKE_HOME_DIRECTORY}/samples)
+  add_subdirectory(${MEDIA_SDK_DIRECTORY}/samples)
 endif()
 
 if (BUILD_RUNTIME)
   if (MFX_ENABLE_SW_FALLBACK)
-    add_subdirectory(${CMAKE_HOME_DIRECTORY}/contrib/ipp)
+    add_subdirectory(${MEDIA_SDK_DIRECTORY}/contrib/ipp)
   endif()
-  add_subdirectory(${CMAKE_HOME_DIRECTORY}/_studio)
+  add_subdirectory(${MEDIA_SDK_DIRECTORY}/_studio)
 endif()
 
 if (BUILD_TESTS)

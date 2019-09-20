@@ -18,7 +18,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-set( MFX_ROOT "${CMAKE_HOME_DIRECTORY}/_studio/shared" )
+set( MFX_ROOT "${MEDIA_SDK_DIRECTORY}/_studio/shared" )
 
 include_directories (
   ${CMAKE_CURRENT_SOURCE_DIR}/include

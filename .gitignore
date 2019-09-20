@@ -1,4 +1,5 @@
 # build folder
+build/
 __cmake/
 tests/gold/
 tests/results/
@@ -12,3 +13,5 @@ samples/_build
 .vscode
 *.cproject
 *.project
+*.h264
+/mfxconfig.h

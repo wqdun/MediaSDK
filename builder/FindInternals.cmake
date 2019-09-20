@@ -20,24 +20,24 @@
 
 function( mfx_include_dirs )
   include_directories (
-    ${CMAKE_HOME_DIRECTORY}/_studio/shared/include
-    ${CMAKE_HOME_DIRECTORY}/_studio/shared/umc/core/vm/include
-    ${CMAKE_HOME_DIRECTORY}/_studio/shared/umc/core/vm_plus/include
-    ${CMAKE_HOME_DIRECTORY}/_studio/shared/umc/core/umc/include
-    ${CMAKE_HOME_DIRECTORY}/_studio/shared/umc/io/umc_io/include
-    ${CMAKE_HOME_DIRECTORY}/_studio/shared/umc/io/umc_va/include
-    ${CMAKE_HOME_DIRECTORY}/_studio/shared/umc/io/media_buffers/include
-    ${CMAKE_HOME_DIRECTORY}/_studio/mfx_lib/shared/include
-    ${CMAKE_HOME_DIRECTORY}/_studio/mfx_lib/optimization/h265/include
-    ${CMAKE_HOME_DIRECTORY}/_studio/mfx_lib/optimization/h264/include
-    ${CMAKE_HOME_DIRECTORY}/_studio/mfx_lib/shared/include
-    ${CMAKE_HOME_DIRECTORY}/_studio/mfx_lib/fei/include
-    ${CMAKE_HOME_DIRECTORY}/_studio/mfx_lib/fei/h264_la
-    ${CMAKE_HOME_DIRECTORY}/contrib/ipp/include
-    ${CMAKE_HOME_DIRECTORY}/contrib/cm/include
+    ${MEDIA_SDK_DIRECTORY}/_studio/shared/include
+    ${MEDIA_SDK_DIRECTORY}/_studio/shared/umc/core/vm/include
+    ${MEDIA_SDK_DIRECTORY}/_studio/shared/umc/core/vm_plus/include
+    ${MEDIA_SDK_DIRECTORY}/_studio/shared/umc/core/umc/include
+    ${MEDIA_SDK_DIRECTORY}/_studio/shared/umc/io/umc_io/include
+    ${MEDIA_SDK_DIRECTORY}/_studio/shared/umc/io/umc_va/include
+    ${MEDIA_SDK_DIRECTORY}/_studio/shared/umc/io/media_buffers/include
+    ${MEDIA_SDK_DIRECTORY}/_studio/mfx_lib/shared/include
+    ${MEDIA_SDK_DIRECTORY}/_studio/mfx_lib/optimization/h265/include
+    ${MEDIA_SDK_DIRECTORY}/_studio/mfx_lib/optimization/h264/include
+    ${MEDIA_SDK_DIRECTORY}/_studio/mfx_lib/shared/include
+    ${MEDIA_SDK_DIRECTORY}/_studio/mfx_lib/fei/include
+    ${MEDIA_SDK_DIRECTORY}/_studio/mfx_lib/fei/h264_la
+    ${MEDIA_SDK_DIRECTORY}/contrib/ipp/include
+    ${MEDIA_SDK_DIRECTORY}/contrib/cm/include
   )
 
-  set ( MSDK_STUDIO_ROOT ${CMAKE_HOME_DIRECTORY}/_studio PARENT_SCOPE )
-  set ( MSDK_LIB_ROOT    ${CMAKE_HOME_DIRECTORY}/_studio/mfx_lib PARENT_SCOPE )
-  set ( MSDK_UMC_ROOT    ${CMAKE_HOME_DIRECTORY}/_studio/shared/umc PARENT_SCOPE )
+  set ( MSDK_STUDIO_ROOT ${MEDIA_SDK_DIRECTORY}/_studio PARENT_SCOPE )
+  set ( MSDK_LIB_ROOT    ${MEDIA_SDK_DIRECTORY}/_studio/mfx_lib PARENT_SCOPE )
+  set ( MSDK_UMC_ROOT    ${MEDIA_SDK_DIRECTORY}/_studio/shared/umc PARENT_SCOPE )
 endfunction()
