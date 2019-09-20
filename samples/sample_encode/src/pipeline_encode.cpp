@@ -17,6 +17,8 @@ The original version of this sample may be obtained from https://software.intel.
 or https://software.intel.com/en-us/media-client-solutions-support.
 \**********************************************************************************/
 // #undef LIBVA_SUPPORT
+#include <glog/logging.h>
+
 #include "mfx_samples_config.h"
 
 #include "pipeline_encode.h"
@@ -100,6 +102,7 @@ mfxStatus CEncTaskPool::Init(MFXVideoSession* pmfxSession, CSmplBitstreamWriter*
 
     m_pmfxSession = pmfxSession;
     m_nPoolSize = nPoolSize;
+    LOG(INFO) << "nPoolSize: " << nPoolSize;
 
     m_pTasks = new sTask [m_nPoolSize];
     MSDK_CHECK_POINTER(m_pTasks, MFX_ERR_MEMORY_ALLOC);
@@ -1355,7 +1358,7 @@ mfxStatus CEncodingPipeline::InitFileWriters(sInputParams *pParams)
 
 mfxStatus CEncodingPipeline::Init(sInputParams *pParams)
 {
-    std::cout << __FUNCTION__ << " start.\n";
+    LOG(INFO) << __FUNCTION__ << " start.";
     MSDK_CHECK_POINTER(pParams, MFX_ERR_NULL_PTR);
 
     mfxStatus sts = MFX_ERR_NONE;

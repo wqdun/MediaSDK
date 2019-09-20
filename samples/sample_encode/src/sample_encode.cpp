@@ -16,6 +16,7 @@ This sample was distributed or derived from the Intel's Media Samples package.
 The original version of this sample may be obtained from https://software.intel.com/en-us/intel-media-server-studio
 or https://software.intel.com/en-us/media-client-solutions-support.
 \**********************************************************************************/
+#include <glog/logging.h>
 
 #include "mfx_samples_config.h"
 
@@ -1273,7 +1274,7 @@ mfxStatus ParseInputString(msdk_char* strInput[], mfxU8 nArgNum, sInputParams* p
     if (MFX_CODEC_MPEG2 != pParams->CodecId &&
         MFX_CODEC_AVC != pParams->CodecId &&
         MFX_CODEC_JPEG != pParams->CodecId &&
-        MFX_CODEC_HEVC != pParams->CodecId && 
+        MFX_CODEC_HEVC != pParams->CodecId &&
         MFX_CODEC_VP9 != pParams->CodecId)
     {
         PrintHelp(strInput[0], MSDK_STRING("Unknown codec"));
@@ -1534,6 +1535,8 @@ int _tmain(int argc, msdk_char *argv[])
 int main(int argc, char *argv[])
 #endif
 {
+    // google::InitGoogleLogging(argv[0]);
+    LOG(INFO) << __FUNCTION__ << " start.";
     sInputParams Params = {};   // input parameters from command line
     std::unique_ptr<CEncodingPipeline>  pPipeline;
 

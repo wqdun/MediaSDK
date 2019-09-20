@@ -9,4 +9,9 @@ list( APPEND LIBS_VARIANT sample_common )
 set(DEPENDENCIES libmfx dl pthread)
 make_executable( shortname universal )
 
+message(STATUS "target: ${target}")
+target_link_libraries(${target}
+    glog
+)
+
 install( TARGETS ${target} RUNTIME DESTINATION ${MFX_SAMPLES_INSTALL_BIN_DIR} )
